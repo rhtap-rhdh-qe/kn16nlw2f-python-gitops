@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: kn16nlw2f-python-gitops
+  description: This is GitOps manifest for kn16nlw2f-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=kn16nlw2f-python
+    backstage.io/kubernetes-id: kn16nlw2f-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: kn16nlw2f-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:kn16nlw2f-python
